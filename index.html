@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldLearn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function searchWord() {
+            let query = document.getElementById('search-input').value;
+            if (query) {
+                window.location.href = `https://www.dictionary.com/browse/${query}`;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("search-input").addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    searchWord();
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #00a2e8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .title {
+            color: white;
+            font-size: 2em;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            width: 100%;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            background-color: white;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.1);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .button {
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 120px;
+        }
+
+        .button:hover {
+            transform: scale(1.15);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:active {
+            transform: scale(1.05);
+        }
+
+        .button span {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .icon {
+            font-size: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 1.5em;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .button {
+                padding: 10px 20px;
+                font-size: 14px;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">WorldLearn</h1>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search">
+        <button onclick="searchWord()">🔍</button>
+    </div>
+    <div class="buttons">
+        <div class="button" onclick="window.location.href='https://ttsmp3.com/'">
+            <div class="icon">💬</div>
+            <span>Speaking</span>
+        </div>
+        <div class="button" onclick="window.location.href='https://translate.google.com'">
+            <div class="icon">🌐</div>
+            <span>Translation</span>
+        </div>
+    </div>
+</body>
+</html>
